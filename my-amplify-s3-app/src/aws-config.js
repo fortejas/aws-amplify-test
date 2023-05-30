@@ -20,13 +20,13 @@ const [
   productionRedirectSignOut,
 ] = awsExports.oauth.redirectSignOut.split(",")
 
-// export const awsConfig = {
-//   ...awsExports,
-//   oauth: {
-//     ...awsExports.oauth,
-//     redirectSignIn: isLocalhost ? localRedirectSignIn : productionRedirectSignIn,
-//     redirectSignOut: isLocalhost ? localRedirectSignOut : productionRedirectSignOut,
-//   }
-// }
+const AWSConfig = {
+  ...awsExports,
+  oauth: {
+    ...awsExports.oauth,
+    redirectSignIn: isLocalhost ? localRedirectSignIn : productionRedirectSignIn,
+    redirectSignOut: isLocalhost ? localRedirectSignOut : productionRedirectSignOut,
+  }
+}
 
-export const awsConfig = awsExports
+export default AWSConfig
